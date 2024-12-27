@@ -1,0 +1,433 @@
+
+<style>
+    :root {
+      --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+        "Source Han Sans CN", sans-serif;
+    }
+    
+    .member-info-container {
+      width: 630px;
+      height: 1024px;
+      background-color: #212121;
+      position: relative;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    
+    .member-info-container * {
+      box-sizing: border-box;
+    }
+    
+    .member-card {
+      width: 542px;
+      height: 933px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2024-12-26/b7befc64-4fc0-42f5-bc71-fe9cff4dbae4.png) center/cover no-repeat;
+      position: absolute;
+      bottom: 73px;
+      right: 51px;
+    }
+    
+    .member-details {
+      width: 516px;
+      height: 501px;
+      position: absolute;
+      bottom: 420px;
+      right: 26px;
+      z-index: 4;
+    }
+    
+    .member-info {
+      width: 483px;
+      height: 501px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 7;
+    }
+    
+    .profile-section {
+      width: 443px;
+      height: 301px;
+      position: absolute;
+      bottom: 100px;
+      right: 14px;
+      z-index: 12;
+    }
+    
+    .profile-picture {
+      width: 102px;
+      height: 104px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2024-12-26/5fd0cfb5-34a6-4718-bb2a-cf5de6747cc3.png) center/cover no-repeat;
+      border-radius: 12px 16.75px 12px 12.25px;
+      position: absolute;
+      bottom: 162px;
+      right: 332px;
+      z-index: 17;
+    }
+    
+    .member-text-info {
+      width: 278.25px;
+      height: 207px;
+      position: absolute;
+      bottom: 40px;
+      right: 31.75px;
+      z-index: 16;
+    }
+    
+    .member-name {
+      display: block;
+      height: 40px;
+      font-family: Inter, var(--default-font-family);
+      font-size: 29.8px;
+      font-weight: 600;
+      line-height: 36.065px;
+      color: #212121;
+      text-align: left;
+      white-space: nowrap;
+      z-index: 16;
+      margin: 0;
+    }
+    
+    .student-id {
+      display: block;
+      height: 22px;
+      font-family: Inter, var(--default-font-family);
+      font-size: 15.7px;
+      font-weight: 600;
+      line-height: 19.001px;
+      color: #6b6b6b;
+      text-align: left;
+      white-space: nowrap;
+      z-index: 15;
+      margin: 2px 0 0 1px;
+    }
+    
+    .additional-info {
+      display: flex;
+      width: 224px;
+      height: 75px;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: Inter, var(--default-font-family);
+      font-size: 16.6px;
+      font-weight: 600;
+      line-height: 23.586px;
+      color: #6e6e6e;
+      text-align: left;
+      overflow: hidden;
+      z-index: 13;
+      margin: 68px 0 0 54.25px;
+    }
+    
+    .card-background {
+      width: 466px;
+      height: 390px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2024-12-26/b2af973f-8b61-4c11-8b98-65ad917cfa42.png) center/cover no-repeat;
+      position: absolute;
+      bottom: 0;
+      right: 12px;
+      z-index: 8;
+    }
+    
+    .qr-code {
+      width: 170px;
+      height: 187px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2024-12-26/19667e2a-b2b8-4714-a863-19c077128526.png) center/contain no-repeat;
+      border-radius: 6px;
+      position: relative;
+      z-index: 14;
+      margin: 121px 0 0 21px;
+    }
+    
+    .edit-details-wrapper {
+      width: 154px;
+      height: 57px;
+      position: relative;
+      overflow: visible auto;
+      z-index: 9;
+      margin: -6px 0 0 24px;
+    }
+    
+    .edit-details-button {
+      width: 148px;
+      height: 50px;
+      background-color: #ffcc02;
+      border-radius: 6px;
+      border: 1px solid #544717;
+      position: relative;
+      z-index: 10;
+      margin: 4px 0 0 3px;
+    }
+    
+    .edit-details-text {
+      display: flex;
+      height: 22px;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: Inter, var(--default-font-family);
+      font-size: 17.5px;
+      font-weight: 600;
+      line-height: 21.179px;
+      color: #685307;
+      position: absolute;
+      bottom: 14px;
+      right: 23px;
+      text-align: left;
+      white-space: nowrap;
+      z-index: 11;
+    }
+    
+    .side-decoration {
+      width: 6px;
+      height: 261px;
+      position: absolute;
+      bottom: 114px;
+      right: 510px;
+      z-index: 6;
+    }
+    
+    .side-decoration-top {
+      width: 6px;
+      height: 47px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2024-12-26/8ba99a4f-71cb-4c9e-91db-475a2395f80f.png) center/cover no-repeat;
+      position: relative;
+      z-index: 6;
+    }
+    
+    .side-decoration-bottom {
+      width: 5px;
+      height: 178px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2024-12-26/a541195b-2755-4ccc-8eda-be9c04dc2a6e.png) center/cover no-repeat;
+      position: relative;
+      z-index: 5;
+      margin: 36px 0 0 0;
+    }
+    
+    .header-section {
+      width: 519px;
+      height: 82px;
+      position: absolute;
+      bottom: 828px;
+      right: 13px;
+      z-index: 18;
+    }
+    
+    .header-background {
+      width: 504px;
+      height: 81px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2024-12-26/2aa7c834-faa3-47dc-82f2-02e504ab3f97.png) center/cover no-repeat;
+      position: relative;
+      z-index: 19;
+      margin: 0 0 0 8px;
+    }
+    
+    .home-button-wrapper {
+      width: 106px;
+      height: 55px;
+      position: absolute;
+      bottom: 13px;
+      right: 19px;
+      z-index: 20;
+    }
+    
+    .home-button {
+      width: 99px;
+      height: 49px;
+      background-color: #fecc00;
+      border-radius: 9.25px;
+      border: 1px solid #473a13;
+      position: relative;
+      z-index: 21;
+      margin: 4px 0 0 5px;
+    }
+    
+    .home-button-text {
+      display: flex;
+      height: 22px;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: Inter, var(--default-font-family);
+      font-size: 17.6px;
+      font-weight: 600;
+      line-height: 21.3px;
+      color: #5b4808;
+      position: absolute;
+      bottom: 13px;
+      right: 22px;
+      text-align: left;
+      white-space: nowrap;
+      z-index: 22;
+    }
+    
+    .header-title {
+      display: flex;
+      height: 28px;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: Inter, var(--default-font-family);
+      font-size: 25.6px;
+      font-weight: 600;
+      line-height: 28px;
+      color: #212121;
+      position: absolute;
+      bottom: 29px;
+      right: 285px;
+      text-align: left;
+      white-space: nowrap;
+      z-index: 23;
+    }
+    
+    .back-icon {
+      width: 22px;
+      height: 25px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2024-12-26/8327b3e2-5ac5-473f-9bf9-8c9f7aca7913.png) center/cover no-repeat;
+      position: absolute;
+      bottom: 27px;
+      right: 455px;
+      z-index: 24;
+    }
+    
+    .footer-section {
+      width: 509px;
+      height: 813px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2024-12-26/d210e1b3-19e0-48dc-a555-83f805fd24a5.png) center/cover no-repeat;
+      position: absolute;
+      bottom: 16px;
+      right: 15px;
+      z-index: 2;
+    }
+    
+    .settings-button {
+      width: 80px;
+      height: 30px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2024-12-26/454d04ad-39f5-4ca1-965c-22619d8d7e81.png) center/cover no-repeat;
+      position: absolute;
+      bottom: 44px;
+      right: 254px;
+      z-index: 3;
+    }
+    
+    .settings-text {
+      display: flex;
+      height: 21px;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: Inter, var(--default-font-family);
+      font-size: 16.4px;
+      font-weight: 400;
+      line-height: 19.848px;
+      color: #685309;
+      position: absolute;
+      bottom: 3px;
+      right: 1px;
+      text-align: left;
+      white-space: nowrap;
+      z-index: 28;
+    }
+    
+    .footer-home-button {
+      width: 60px;
+      height: 30px;
+      position: absolute;
+      bottom: 44px;
+      right: 174px;
+      z-index: 25;
+    }
+    
+    .footer-home-button-inner {
+      width: 57px;
+      height: 28px;
+      background-color: #fecb00;
+      border-radius: 12.5px;
+      border: 4px solid #43340f;
+      position: relative;
+      z-index: 26;
+      margin: 1px 0 0 2px;
+    }
+    
+    .footer-home-text {
+      display: flex;
+      height: 18px;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: Inter, var(--default-font-family);
+      font-size: 17.1px;
+      font-weight: 400;
+      line-height: 18px;
+      color: #655108;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      text-align: left;
+      white-space: nowrap;
+      z-index: 27;
+    }
+    
+    .side-decoration-long {
+      width: 7px;
+      height: 138px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2024-12-26/4302de76-f987-48e8-a2df-e76a279c7c32.png) center/cover no-repeat;
+      position: absolute;
+      bottom: 676px;
+      right: 49px;
+      z-index: 1;
+    }
+    </style>
+    
+    <section class="member-info-container">
+      <div class="member-card">
+        <div class="member-details">
+          <div class="member-info">
+            <div class="profile-section">
+              <div class="profile-picture"></div>
+              <div class="member-text-info">
+                <h2 class="member-name">Saran Fuchs</h2>
+                <p class="student-id">Student ID: 6710707</p>
+                <p class="additional-info">
+                  Plate Number: 6ถต-3234<br>
+                  Membership Expiry: <br>2025-05-21
+                </p>
+              </div>
+            </div>
+            <div class="card-background">
+              <div class="qr-code"></div>
+              <div class="edit-details-wrapper">
+                <button class="edit-details-button">
+                  <span class="edit-details-text">Edit Details</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="side-decoration">
+            <div class="side-decoration-top"></div>
+            <div class="side-decoration-bottom"></div>
+          </div>
+        </div>
+        <header class="header-section">
+          <div class="header-background">
+            <div class="home-button-wrapper">
+              <button class="home-button">
+                <span class="home-button-text">Home</span>
+              </button>
+            </div>
+            <h1 class="header-title">Member Info</h1>
+            <div class="back-icon"></div>
+          </div>
+        </header>
+        <footer class="footer-section">
+          <button class="settings-button">
+            <span class="settings-text">Setting's</span>
+          </button>
+          <div class="footer-home-button">
+            <div class="footer-home-button-inner">
+              <span class="footer-home-text">Home</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div class="side-decoration-long"></div>
+    </section>
+
+  
